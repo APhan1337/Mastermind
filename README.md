@@ -10,4 +10,5 @@ Mastermind Game for LinkedIn Reach Mobile Apprenticeship.
 <p float="left">
     <img src="https://github.com/APhan1337/Mastermind/blob/main/Images/Wireframe%204.png" width=200 />
     <img src="https://github.com/APhan1337/Mastermind/blob/main/Images/Wireframe%205.png" width=200 />
+    <img src="https://github.com/APhan1337/Mastermind/blob/main/Images/Wireframe%206.png" width=200 />
 </p>
