@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MastermindApp: App {
+    @StateObject var gameViewModel = GuessingGame()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(gameViewModel)
         }
     }
 }
