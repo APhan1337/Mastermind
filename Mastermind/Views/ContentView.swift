@@ -23,7 +23,7 @@ struct ContentView: View {
                 .frame(width: UIScreen.main.bounds.width - 200)
                 Divider()
                 NumPadView(input: .constant(""))
-                Button("Submit") {
+                Button("Submit") {	
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }
             }
