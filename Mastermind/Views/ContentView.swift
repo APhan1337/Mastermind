@@ -11,16 +11,22 @@ struct ContentView: View {
     @EnvironmentObject var gameViewModel: GuessingGame
     var body: some View {
         NavigationView {
-            GeometryReader { geometry in
-                VStack(spacing: 3) {
-                    ForEach(0...9, id:\.self) { index in
-                        GuessView(guess: $gameViewModel.guesses[index])
+            VStack {
+                GeometryReader { geometry in
+                    VStack(spacing: 3) {
+                        ForEach(0...9, id:\.self) { index in
+                            GuessView(guess: $gameViewModel.guesses[index])
+                        }
                     }
+                    .frame(width: geometry.size.width, height: 10 * geometry.size.width / 4)
                 }
-                .frame(width: geometry.size.width, height: 10 * geometry.size.width / 4)
+                .frame(width: UIScreen.main.bounds.width - 200)
+                Divider()
+                NumPadView(input: .constant(""))
+                Button("Submit") {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }
             }
-            .frame(width: UIScreen.main.bounds.width - 100)
-           
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
