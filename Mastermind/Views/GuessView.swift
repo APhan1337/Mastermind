@@ -18,6 +18,7 @@ struct GuessView: View {
                     .font(.system(size: 35, weight: .heavy))
                     .border(Color(.secondaryLabel))
             }
+            Text(guess.feedback)
         }
     }
 }

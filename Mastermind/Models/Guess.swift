@@ -13,5 +13,6 @@ struct Guess {
     var digit: [String] {
         number.map { String($0) }
     }
+    var feedback = ""
 }
 

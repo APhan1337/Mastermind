@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var gameViewModel: GuessingGame
+    @State private var showingGlossary = false
     var body: some View {
         NavigationView {
             VStack {
+                Spacer()
                 GeometryReader { geometry in
                     VStack(spacing: 3) {
                         ForEach(0...9, id:\.self) { index in
@@ -20,20 +22,21 @@ struct ContentView: View {
                     }
                     .frame(width: geometry.size.width, height: 10 * geometry.size.width / 4)
                 }
-                .frame(width: UIScreen.main.bounds.width - 200)
+                .frame(width: UIScreen.main.bounds.width * 0.48)
+                Spacer()
                 Divider()
-                NumPadView(input: .constant(""))
-                Button("Submit") {	
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
+                NumPadView()
             }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
-                            
+                            showingGlossary = true
                         } label: {
                             Image(systemName: "questionmark.circle")
+                        }
+                        .alert("? - Correct number \n! - Correct position", isPresented: $showingGlossary) {
+                            
                         }
                     }
                     ToolbarItem(placement: .principal) {
@@ -41,6 +44,11 @@ struct ContentView: View {
                             .font(.largeTitle)
                             .fontWeight(.heavy)
                             .tracking(10)
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("\u{21BB}") {
+                            gameViewModel.startNewGame()
+                        }
                     }
                 }
         }
