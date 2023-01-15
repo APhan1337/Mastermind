@@ -37,3 +37,8 @@ When designing this app, I wanted the user interaction to be kept at a minimum. 
     <img src="https://github.com/APhan1337/Mastermind/blob/main/Images/Wireframe%205.png" width=200 />
     <img src="https://github.com/APhan1337/Mastermind/blob/main/Images/Wireframe%206.png" width=200 />
 </p>
+
+## Video Walkthrough
+Here's a walkthrough of current progress:
+
+<img src="https://github.com/APhan1337/Mastermind/blob/main/Images/App_Demo.gif" />
